@@ -6,7 +6,7 @@ const ProductsLayout = () => {
 <div className="flex flex-col min-h-screen">
   <Navbar />
   <main className="flex-grow px-4 sm:px-6 md:px-8 bg-gray-100">
-    <div className="max-w-screen-md text-center">
+    <div className="text-center">
       <Outlet />
     </div>
   </main>

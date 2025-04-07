@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { ProductsPage } from '../page/ProductsPage'
 import ProductsLayout from '../components/Products/Layout/ProductsLayout'
 
@@ -8,6 +8,7 @@ export const AppRouter = () => {
         <Route path='/'  element={<ProductsLayout/>} >
             <Route index element={<ProductsPage/>}/>
         </Route>
+        <Route path="/*" element={<Navigate to={"/"} />} />
     </Routes>
   )
 }
