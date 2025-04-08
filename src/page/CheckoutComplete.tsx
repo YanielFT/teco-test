@@ -15,7 +15,7 @@ export const CheckoutComplete = () => {
   }, [dispatch]);
 
   return (
-    <div className="w-lg">
+    <div className="sm:w-lg">
       <OrderCompleteIllustration />
       <Confetti gravity={0.2} tweenDuration={5000} recycle={false} />
     </div>
