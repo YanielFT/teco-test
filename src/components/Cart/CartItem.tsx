@@ -1,4 +1,3 @@
-import React from "react";
 import { CartItemProduct } from "../../api/type/Cart";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/store";

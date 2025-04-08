@@ -17,12 +17,12 @@ export const ProductDetailPage = () => {
     if (id) {
       dispatch(getProduct(id));
     }
-  }, []);
+  }, [id, dispatch]);
 
   useEffect(() => {
     if (!error) return;
     enqueueSnackbar(error, { variant: "error" });
-  }, [error]);
+  }, [error, dispatch]);
 
   if (!product && error) {
     return <Navigate to={"/not-found"} />;

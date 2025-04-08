@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { ProductCard } from "../components/Products/components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { startLoadingProducts } from "../store/Products/thunks";
@@ -18,7 +18,7 @@ export const ProductsPage = () => {
 
   useEffect(() => {
     dispatch(startLoadingProducts());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!error) return;
