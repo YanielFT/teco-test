@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getProduct } from "../store/Products/thunks";
 import { ProductDetailContainer } from "../components/Products/components/ProductDetailContainer";
 import { Loading } from "../components/ui/Loading";
+import { enqueueSnackbar } from "notistack";
 
 export const ProductDetailPage = () => {
   const { id } = useParams();
@@ -17,6 +18,11 @@ export const ProductDetailPage = () => {
       dispatch(getProduct(id));
     }
   }, []);
+
+  useEffect(() => {
+    if (!error) return;
+    enqueueSnackbar(error, { variant: "error" });
+  }, [error]);
 
   if (!product && error) {
     return <Navigate to={"/not-found"} />;
