@@ -3,6 +3,8 @@ export interface Product {
     title: string;
     price: number;
     description: string;
-    category: string;
+    category?: string;
     image: string;
   }
+
+export type ProductsResponse = Omit<Product, "id">;
