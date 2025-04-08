@@ -22,8 +22,7 @@ export const CheckoutForm = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form Data:", data);
+  const onSubmit = () => {
     navigate("/checkout-complete");
   };
 
