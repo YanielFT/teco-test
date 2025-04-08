@@ -15,7 +15,11 @@ export const startLoadingProducts = () => {
 
       dispatch(setProducts(response.data));
     } catch (error) {
-      dispatch(setError(error.message || "Error desconocido"));
+      if (error instanceof Error) {
+        dispatch(setError(error.message));
+      } else {
+        dispatch(setError("Error desconocido"));
+      }
     }
   };
 };
@@ -32,7 +36,11 @@ export const getProduct = (id: string) => {
       }
       dispatch(setProduct(response.data));
     } catch (error) {
-      dispatch(setError(error.message || "Error desconocido"));
+      if (error instanceof Error) {
+        dispatch(setError(error.message));
+      } else {
+        dispatch(setError("Error desconocido"));
+      }
     }
   };
 };
