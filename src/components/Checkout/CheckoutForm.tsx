@@ -3,10 +3,6 @@ import { useForm } from "react-hook-form";
 import { CheckoutSchema } from "./Checkout.schema";
 import { InputField } from "../ui/InputField";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { clearCart } from "../../store/Cart/CartSlice";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../store/store";
 
 type FormData = {
   fullName: string;
@@ -16,7 +12,6 @@ type FormData = {
 };
 
 export const CheckoutForm = () => {
-  const dispatch = useDispatch<AppDispatch>();
   const {
     register,
     handleSubmit,
@@ -24,10 +19,6 @@ export const CheckoutForm = () => {
   } = useForm<FormData>({
     resolver: zodResolver(CheckoutSchema),
   });
-
-  useEffect(() => {
-    dispatch(clearCart());
-  }, [dispatch]);
 
   const navigate = useNavigate();
 
